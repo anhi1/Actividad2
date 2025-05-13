@@ -5,7 +5,7 @@ import Navbar from './components/Navbar'
 import Login from './pages/Login'
 import './App.css'
 import ActivitiesPage from './pages/ActivitiesPage'
-
+import ActivityDetail from './pages/ActivityDetail'
 function App() {
 
   return (
@@ -15,6 +15,7 @@ function App() {
         <Route path='/' element={<LandingPage />} />
         <Route path='/login' element={<Login />} />
         <Route path='activities' element={<ActivitiesPage/>}/>
+        <Route path='activities/:id' element={<ActivityDetail/>}/>
         
       </Routes>
       <Footer/>

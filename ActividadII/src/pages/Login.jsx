@@ -1,23 +1,22 @@
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext'; // Importa el contexto de autenticación
-import { useNavigate } from 'react-router-dom'; // Importa el hook para redirigir
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const { login } = useAuth(); // Accede a la función login del contexto
-  const navigate = useNavigate(); // Hook para redirigir
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      // Llama a la función login del contexto
       const success = await login(email, password);
       if (success) {
-        navigate('/activities'); // Redirige a /activities si el login es exitoso
+        navigate('/activities');
       } else {
         setError('Credenciales incorrectas');
       }
@@ -28,32 +27,42 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <div>
-          <label>Email:</label>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+    <div className="container d-flex justify-content-center align-items-center min-vh-100">
+      <div className="card p-4 shadow" style={{ maxWidth: '400px', width: '100%' }}>
+        <h2 className="mb-4 text-center">Iniciar Sesión</h2>
+
+        {error && <div className="alert alert-danger">{error}</div>}
+
+        <form onSubmit={handleLogin}>
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">Correo electrónico</label>
+            <input
+              id="email"
+              type="email"
+              className="form-control"
+              placeholder="Ingresa tu correo"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">Contraseña</label>
+            <input
+              id="password"
+              type="password"
+              className="form-control"
+              placeholder="Ingresa tu contraseña"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+
+          <button type="submit" className="btn btn-primary w-100">Entrar</button>
+        </form>
+      </div>
     </div>
   );
 };

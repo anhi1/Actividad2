@@ -7,10 +7,19 @@ const Navbar = () => {
 
   return (
     <div className="container">
-      <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+      <nav className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-5 border-bottom">
         <div className="col-md-3 mb-2 mb-md-0">
-          <a href="/" className="d-inline-flex link-body-emphasis text-decoration-none">
-            <svg className="bi" width="40" height="32" role="img" aria-label="Bootstrap">
+          <a
+            href="/"
+            className="d-inline-flex link-body-emphasis text-decoration-none"
+          >
+            <svg
+              className="bi"
+              width="40"
+              height="32"
+              role="img"
+              aria-label="Bootstrap"
+            >
               <use xlinkHref="#bootstrap"></use>
             </svg>
           </a>
@@ -21,6 +30,13 @@ const Navbar = () => {
               Home
             </Link>
           </li>
+          {isAuthenticated && (
+            <li>
+              <Link to="/reservations" className="nav-link px-2">
+                Mis Reservas
+              </Link>
+            </li>
+          )}
           <li>
             <Link to="/activities" className="nav-link px-2">
               Actividades
@@ -53,7 +69,7 @@ const Navbar = () => {
             </button>
           )}
         </div>
-      </header>
+      </nav>
     </div>
   );
 };

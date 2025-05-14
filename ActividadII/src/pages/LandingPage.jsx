@@ -27,7 +27,7 @@ const LandingPage = () => {
     fetchStoreData();
   }, []);
 
-  if (loading) return <p>Cargando datos de la tienda...</p>;
+  if (loading) return <p>Cargando datos ...</p>;
   if (error) return <p>{error}</p>;
 
   return (
@@ -73,7 +73,7 @@ const LandingPage = () => {
             </p>
             <p className="about-text">
               Si eres alguien que resuelve problemas y está dispuesto a hacer lo que sea necesario para eliminar el plástico
-              de los océanos del mundo, te queremos en The Ocean Cleanup.
+              de los océanos del mundo, te queremos en Activarte.
             </p>
             
           </div>

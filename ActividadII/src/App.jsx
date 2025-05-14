@@ -9,6 +9,7 @@ import ActivityDetail from "./pages/ActivityDetail";
 import { AuthProvider } from "./context/AuthContext";
 import PrivateRoute from "./components/PrivateRoute"; // Asegúrate de importar PrivateRoute
 import MyReservations from "./pages/MyReservations";
+import About from "./pages/About";
 function App() {
   return (
     <div>
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<About />} />
 
           {/* Rutas privadas */}
           <Route

@@ -42,6 +42,15 @@ const Login = () => {
         {/* Lado derecho: Formulario */}
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
           <div className="card p-4 shadow w-100" style={{ maxWidth: '400px' }}>
+            {/* GIF Animado arriba */}
+            <div className="text-center mb-4">
+              <img
+                src="viajero.gif" // Pon tu GIF en public/animations/
+                alt="Animación viajero"
+                style={{ height: '110px' }}
+              />
+            </div>
+
             <h2 className="mb-4 text-center">Iniciar Sesión</h2>
 
             {error && <div className="alert alert-danger">{error}</div>}

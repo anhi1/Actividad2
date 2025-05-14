@@ -6,26 +6,9 @@ const About = () => {
       {/* Carrusel Bootstrap */}
       <div id="carouselExampleIndicators" className="carousel slide mb-5">
         <div className="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            className="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div className="carousel-inner rounded shadow">
           <div className="carousel-item active">
@@ -38,32 +21,29 @@ const About = () => {
             <img src="3.jpg" className="d-block w-100" alt="Carrusel 3" />
           </div>
         </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
-        >
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Anterior</span>
         </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Siguiente</span>
         </button>
+      </div>
+
+      {/* Frase entre el carrusel y el texto */}
+      <div className="text-center mb-5">
+        <h3 className="fw-semibold">Explora. Disfruta. Repite.</h3>
+        <p className="text-muted">Tu próximo plan perfecto está a solo un clic de distancia.</p>
       </div>
 
       {/* Texto "About" */}
       <div className="row align-items-center">
         <div className="col-md-6 mb-4 mb-md-0">
           <img
-            src="/img/about-activities.png"
+            src="2.jpg"
             alt="Actividades de ocio"
+            width="90%"
             className="img-fluid rounded shadow"
           />
         </div>

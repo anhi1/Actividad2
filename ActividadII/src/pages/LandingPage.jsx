@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const [storeData, setStoreData] = useState(null);
@@ -44,13 +45,9 @@ const LandingPage = () => {
                 <p className="lead">
                   Creamos experiencias inolvidables para que te diviertas, te desconectes y compartas momentos únicos con quienes más quieres.
                 </p>
-                <button
-                  className="btn btn-primary"
-                  type="button"
-                  onClick={() => window.location.href = "/contacto"}
-                >
-                  Contacto
-                </button>
+                <Link to="/about" className="btn btn-primary">
+                  Ver más
+                  </Link>
               </div>
             </div>
             <div className="col-12 col-md-6">

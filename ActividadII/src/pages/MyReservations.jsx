@@ -14,7 +14,7 @@ const MyReservations = () => {
   }, []);
 
   return (
-    <div className="container mt-4 ">
+    <div className="tabla container mt-4 mb-5">
       <h2 className="mb-4">Mis Reservaciones</h2>
       {reservations.length === 0 ? (
         <p>No tienes reservaciones.</p>

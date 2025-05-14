@@ -27,41 +27,56 @@ const Login = () => {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center min-vh-100">
-      <div className="card p-4 shadow" style={{ maxWidth: '400px', width: '100%' }}>
-        <h2 className="mb-4 text-center">Iniciar Sesión</h2>
+    <div className="container-fluid min-vh-100 d-flex align-items-center bg-light">
+      <div className="row w-100">
+        {/* Lado izquierdo: Imagen */}
+        <div className="col-md-6 d-none d-md-flex align-items-center justify-content-center ">
+          <img
+            src="jovenes.jpg" // Asegúrate de tener esta imagen
+            alt="Login visual"
+            className="img-fluid"
+            style={{ maxHeight: '100vh', objectFit: 'cover', width: '100%' }}
+          />
+        </div>
 
-        {error && <div className="alert alert-danger">{error}</div>}
+        {/* Lado derecho: Formulario */}
+        <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
+          <div className="card p-4 shadow w-100" style={{ maxWidth: '400px' }}>
+            <h2 className="mb-4 text-center">Iniciar Sesión</h2>
 
-        <form onSubmit={handleLogin}>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">Correo electrónico</label>
-            <input
-              id="email"
-              type="email"
-              className="form-control"
-              placeholder="Ingresa tu correo"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+            {error && <div className="alert alert-danger">{error}</div>}
+
+            <form onSubmit={handleLogin}>
+              <div className="mb-3">
+                <label htmlFor="email" className="form-label">Correo electrónico</label>
+                <input
+                  id="email"
+                  type="email"
+                  className="form-control"
+                  placeholder="Ingresa tu correo"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div className="mb-3">
+                <label htmlFor="password" className="form-label">Contraseña</label>
+                <input
+                  id="password"
+                  type="password"
+                  className="form-control"
+                  placeholder="Ingresa tu contraseña"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+
+              <button type="submit" className="btn btn-primary w-100">Entrar</button>
+            </form>
           </div>
-
-          <div className="mb-3">
-            <label htmlFor="password" className="form-label">Contraseña</label>
-            <input
-              id="password"
-              type="password"
-              className="form-control"
-              placeholder="Ingresa tu contraseña"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-          </div>
-
-          <button type="submit" className="btn btn-primary w-100">Entrar</button>
-        </form>
+        </div>
       </div>
     </div>
   );

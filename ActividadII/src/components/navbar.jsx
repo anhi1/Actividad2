@@ -7,21 +7,21 @@ const Navbar = () => {
 
   return (
     <div className="container">
-      <nav className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-5 border-bottom">
+      <nav className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom">
         <div className="col-md-3 mb-2 mb-md-0">
           <a
             href="/"
             className="d-inline-flex link-body-emphasis text-decoration-none"
           >
-            <svg
+            <img src="logo.svg"
               className="bi"
-              width="40"
-              height="32"
+              width="70"
+              
               role="img"
               aria-label="Bootstrap"
             >
-              <use xlinkHref="#bootstrap"></use>
-            </svg>
+             
+            </img>
           </a>
         </div>
         <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">

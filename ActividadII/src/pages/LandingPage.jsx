@@ -33,7 +33,7 @@ const LandingPage = () => {
   return (
     <>
       {/* Hero Section */}
-      <header className="hero-section bg-cream">
+      <header className="hero-section bg-cream mt-5">
         <div className="container">
           <div className="row align-items-center py-5 g-5">
             <div className="col-12 col-md-6">

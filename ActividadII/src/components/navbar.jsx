@@ -1,7 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Importar Link de react-router-dom
+import { useAuth } from "../context/AuthContext"; // Importamos el hook del contexto de autenticación
 
 const Navbar = () => {
+  const { isAuthenticated, logout } = useAuth(); // Accedemos al estado de autenticación y a la función logout
+
   return (
     <div className="container">
       <header className="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -19,11 +22,6 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="#" className="nav-link px-2">
-              Features
-            </Link>
-          </li>
-          <li>
             <Link to="/activities" className="nav-link px-2">
               Actividades
             </Link>
@@ -35,13 +33,25 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="col-md-3 text-end">
-          {/* El Link de Login redirige a /login */}
-          <Link to="/login" className="btn btn-outline-primary me-2">
-            Login
-          </Link>
-          <button type="button" className="btn btn-primary">
-            Sign-up
-          </button>
+          {/* Si el usuario no está autenticado, mostramos el botón de Login */}
+          {!isAuthenticated ? (
+            <Link to="/login" className="btn btn-outline-primary me-2">
+              Login
+            </Link>
+          ) : (
+            <>
+              {/* Si el usuario está autenticado, mostramos el botón de Logout */}
+              <button onClick={logout} className="btn btn-outline-danger me-2">
+                Logout
+              </button>
+            </>
+          )}
+          {/* Aquí puedes agregar un botón de registro si lo deseas */}
+          {!isAuthenticated && (
+            <button type="button" className="btn btn-primary">
+              Sign-up
+            </button>
+          )}
         </div>
       </header>
     </div>

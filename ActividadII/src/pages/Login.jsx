@@ -1,39 +1,29 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { useAuth } from '../context/AuthContext'; // Importa el contexto de autenticación
+import { useNavigate } from 'react-router-dom'; // Importa el hook para redirigir
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const [status, setStatus] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const { login } = useAuth(); // Accede a la función login del contexto
+  const navigate = useNavigate(); // Hook para redirigir
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://127.0.0.1:3658/m1/914149-896526-default/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        setMessage(data.message);
-        setStatus("success");
+      // Llama a la función login del contexto
+      const success = await login(email, password);
+      if (success) {
+        navigate('/activities'); // Redirige a /activities si el login es exitoso
       } else {
-        const data = await response.json();
-        setMessage(data.message);
-        setStatus("error");
+        setError('Credenciales incorrectas');
       }
-    } catch (error) {
-      console.error("Error en la solicitud:", error);
-      setMessage("Hubo un error con la solicitud.");
-      setStatus("error");
+    } catch (err) {
+      console.error('Error en el login:', err);
+      setError('Hubo un problema al iniciar sesión.');
     }
   };
 
@@ -45,9 +35,9 @@ const Login = () => {
           <label>Email:</label>
           <input
             type="email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
             required
           />
         </div>
@@ -55,20 +45,15 @@ const Login = () => {
           <label>Password:</label>
           <input
             type="password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
             required
           />
         </div>
         <button type="submit">Login</button>
       </form>
-
-      {message && (
-        <div style={{ color: status === "success" ? "green" : "red" }}>
-          {message}
-        </div>
-      )}
+      {error && <p style={{ color: 'red' }}>{error}</p>}
     </div>
   );
 };

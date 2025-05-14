@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className="container py-5">
+    <div className="container">
       {/* Carrusel Bootstrap */}
       <div id="carouselExampleIndicators" className="carousel slide mb-5">
         <div className="carousel-indicators">

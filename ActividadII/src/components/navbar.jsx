@@ -44,7 +44,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/about" className="nav-link px-2">
-              About
+              Nosotros
             </Link>
           </li>
         </ul>

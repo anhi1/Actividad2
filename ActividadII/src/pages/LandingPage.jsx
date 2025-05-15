@@ -43,11 +43,13 @@ const LandingPage = () => {
                   <span className="text">Aventura y diversión</span>
                 </h1>
                 <p className="lead">
-                  Creamos experiencias inolvidables para que te diviertas, te desconectes y compartas momentos únicos con quienes más quieres.
+                  Creamos experiencias inolvidables para que te diviertas, te
+                  desconectes y compartas momentos únicos con quienes más
+                  quieres.
                 </p>
                 <Link to="/about" className="btn btn-primary">
                   Ver más
-                  </Link>
+                </Link>
               </div>
             </div>
             <div className="col-12 col-md-6">
@@ -61,50 +63,100 @@ const LandingPage = () => {
       <div className="container">
         <div className="row align-items-center gx-5 gy-3 py-5">
           <div className="col-12 col-lg-5">
-            <img src={storeData.image} alt="Imagen" className="img-fluid mb-3" />
+            <img
+              src={storeData.image}
+              alt="Imagen"
+              className="img-fluid mb-3"
+            />
           </div>
           <div className="col-12 col-lg-7 text-lg-start">
-            <h3 className="fw-bold text-primary fs-1 pb-3">Activa tu mente mientras te diviertes</h3>
+            <h3 className="fw-bold text-primary fs-1 pb-3">
+              Activa tu mente mientras te diviertes
+            </h3>
             <p className="about-text">
-              Desde juegos de lógica hasta actividades al aire libre con retos estratégicos, mantener tu mente en forma puede ser tan divertido como beneficioso. Participa en escape rooms, resuelve acertijos en equipo, explora rutas de orientación o sumérgete en dinámicas creativas como improvisación teatral o talleres de construcción. Estas experiencias no solo entretienen, sino que mejoran tu concentración, memoria y capacidad para resolver problemas de forma ágil. ¡Convierte cada momento en una oportunidad para pensar, jugar y crecer!
+              Desde juegos de lógica hasta actividades al aire libre con retos
+              estratégicos, mantener tu mente en forma puede ser tan divertido
+              como beneficioso. Participa en escape rooms, resuelve acertijos en
+              equipo, explora rutas de orientación o sumérgete en dinámicas
+              creativas como improvisación teatral o talleres de construcción.
+              Estas experiencias no solo entretienen, sino que mejoran tu
+              concentración, memoria y capacidad para resolver problemas de
+              forma ágil. ¡Convierte cada momento en una oportunidad para
+              pensar, jugar y crecer!
             </p>
             <p className="about-text">
-              Si eres alguien que resuelve problemas y está dispuesto a hacer lo que sea necesario para eliminar el plástico
-              de los océanos del mundo, te queremos en Activarte.
+              Si eres alguien que resuelve problemas y está dispuesto a hacer lo
+              que sea necesario para eliminar el plástico de los océanos del
+              mundo, te queremos en Activarte.
             </p>
-            
           </div>
         </div>
       </div>
 
-      {/* Contenido de la tienda */}
-<div className="container-fluid bg-light py-5">
-  <div className="text-center mb-4">
-    <h1>Datos</h1>
-  </div>
+      {/* Contenido de la app */}
+      <div className="container-fluid bg-light py-5">
+        <div className="text-center mb-4">
+          <h1>Datos</h1>
+        </div>
 
-  <div className="row text-center">
-    <div className="col-12 col-md-6 col-lg-3 mb-4">
-      <img src="Location.png" alt="Dirección" width="40" height="40" className="mb-2" />
-      <p><strong>Dirección:</strong><br /> {storeData.address.street}, {storeData.address.city}</p>
-    </div>
+        <div className="row text-center">
+          <div className="col-12 col-md-6 col-lg-3 mb-4">
+            <img
+              src="Location.png"
+              alt="Dirección"
+              width="40"
+              height="40"
+              className="mb-2"
+            />
+            <p>
+              <strong>Dirección:</strong>
+              <br /> {storeData.address.street}, {storeData.address.city}
+            </p>
+          </div>
 
-    <div className="col-12 col-md-6 col-lg-3 mb-4">
-      <img src="call.png" alt="Contacto" width="40" height="40" className="mb-2" />
-      <p><strong>Contacto:</strong><br /> {storeData.contact.phone} <br /> {storeData.contact.email}</p>
-    </div>
+          <div className="col-12 col-md-6 col-lg-3 mb-4">
+            <img
+              src="call.png"
+              alt="Contacto"
+              width="40"
+              height="40"
+              className="mb-2"
+            />
+            <p>
+              <strong>Contacto:</strong>
+              <br /> {storeData.contact.phone} <br /> {storeData.contact.email}
+            </p>
+          </div>
 
-    <div className="col-12 col-md-6 col-lg-3 mb-4">
-      <img src="Calendar.png" alt="Horario" width="40" height="40" className="mb-2" />
-      <p><strong>Horario viernes:</strong><br /> {storeData.hours.friday}</p>
-    </div>
+          <div className="col-12 col-md-6 col-lg-3 mb-4">
+            <img
+              src="Calendar.png"
+              alt="Horario"
+              width="40"
+              height="40"
+              className="mb-2"
+            />
+            <p>
+              <strong>Horario viernes:</strong>
+              <br /> {storeData.hours.friday}
+            </p>
+          </div>
 
-    <div className="col-12 col-md-6 col-lg-3 mb-4">
-      <img src="Text.png" alt="Descripción" width="40" height="40" className="mb-2" />
-      <p><strong>Descripción:</strong><br /> {storeData.additional_info.description}</p>
-    </div>
-  </div>
-</div>
+          <div className="col-12 col-md-6 col-lg-3 mb-4">
+            <img
+              src="Text.png"
+              alt="Descripción"
+              width="40"
+              height="40"
+              className="mb-2"
+            />
+            <p>
+              <strong>Descripción:</strong>
+              <br /> {storeData.additional_info.description}
+            </p>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

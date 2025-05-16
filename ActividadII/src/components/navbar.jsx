@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom"; 
-import { useAuth } from "../context/AuthContext"; 
+import { Link } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const Navbar = () => {
   const { isAuthenticated, logout } = useAuth();
@@ -13,15 +13,13 @@ const Navbar = () => {
             href="/"
             className="d-inline-flex link-body-emphasis text-decoration-none"
           >
-            <img src="logo.svg"
+            <img
+              src="logo.svg"
               className="bi"
               width="70"
-              
               role="img"
               aria-label="Bootstrap"
-            >
-             
-            </img>
+            ></img>
           </a>
         </div>
         <ul className="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
@@ -49,20 +47,17 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="col-md-3 text-end">
-          {/* Si el usuario no está autenticado, mostramos el botón de Login */}
           {!isAuthenticated ? (
             <Link to="/login" className="btn btn-outline-primary me-2">
               Login
             </Link>
           ) : (
             <>
-              {/* Si el usuario está autenticado, mostramos el botón de Logout */}
               <button onClick={logout} className="btn btn-outline-danger me-2">
                 Logout
               </button>
             </>
           )}
-          {/* Aquí puedes agregar un botón de registro si lo deseas */}
           {!isAuthenticated && (
             <button type="button" className="btn btn-primary">
               Sign-up

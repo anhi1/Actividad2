@@ -17,14 +17,12 @@ const Login = () => {
       setError("Correo o contraseña incorrectos");
     } else {
       setError("");
-      // Navega dentro del contexto
     }
   };
 
   return (
     <div className="container-fluid min-vh-100 d-flex align-items-center bg-light">
       <div className="row w-100">
-        {/* Imagen izquierda */}
         <div className="col-md-6 d-none d-md-flex align-items-center justify-content-center">
           <img
             src="jovenes.jpg"
@@ -33,8 +31,6 @@ const Login = () => {
             style={{ maxHeight: "100vh", objectFit: "cover", width: "100%" }}
           />
         </div>
-
-        {/* Formulario derecha */}
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
           <div className="card p-4 shadow w-100" style={{ maxWidth: "400px" }}>
             <div className="text-center mb-4">

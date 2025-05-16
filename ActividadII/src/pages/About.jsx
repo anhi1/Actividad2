@@ -3,7 +3,7 @@ import React from 'react';
 const About = () => {
   return (
     <div className="container">
-      {/* Carrusel*/}
+    
       <div id="carouselExampleIndicators" className="carousel slide mb-5">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -31,13 +31,13 @@ const About = () => {
         </button>
       </div>
 
-      {/* Frase entre el carrusel y el texto */}
+      
       <div className="text-center mb-5">
         <h3 className="fw-semibold">Explora. Disfruta. Repite.</h3>
         <p className="text-muted">Tu próximo plan perfecto está a solo un clic de distancia.</p>
       </div>
 
-      {/* Texto "About" */}
+     
       <div className="row align-items-center">
         <div className="col-md-6 mb-4 mb-md-0">
           <img

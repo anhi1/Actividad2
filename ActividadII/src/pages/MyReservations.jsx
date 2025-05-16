@@ -7,7 +7,7 @@ const MyReservations = () => {
     fetch("http://127.0.0.1:3658/m1/914149-896526-default/reservations")
       .then(res => res.json())
       .then(data => {
-        const userReservations = data.filter(r => r.user_id === 1); // puedes reemplazar "1" con un userId dinámico si lo necesitas
+        const userReservations = data.filter(r => r.user_id === 1); 
         setReservations(userReservations);
       })
       .catch(err => console.error("Error al obtener las reservas:", err));

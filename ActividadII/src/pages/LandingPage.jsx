@@ -59,7 +59,6 @@ const LandingPage = () => {
         </div>
       </header>
 
-      {/* Sección Agregada */}
       <div className="container">
         <div className="row align-items-center gx-5 gy-3 py-5">
           <div className="col-12 col-lg-5">
@@ -92,13 +91,10 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-
-      {/* Contenido de la app */}
       <div className="container-fluid bg-light py-5">
         <div className="text-center mb-4">
           <h1>Datos</h1>
         </div>
-
         <div className="row text-center">
           <div className="col-12 col-md-6 col-lg-3 mb-4">
             <img

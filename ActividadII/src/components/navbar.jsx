@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Importar Link de react-router-dom
-import { useAuth } from "../context/AuthContext"; // Importamos el hook del contexto de autenticación
+import { Link } from "react-router-dom"; 
+import { useAuth } from "../context/AuthContext"; 
 
 const Navbar = () => {
-  const { isAuthenticated, logout } = useAuth(); // Accedemos al estado de autenticación y a la función logout
+  const { isAuthenticated, logout } = useAuth();
 
   return (
     <div className="container">

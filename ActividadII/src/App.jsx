@@ -1,13 +1,13 @@
 import LandingPage from "./pages/LandingPage";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import "./App.css";
 import ActivitiesPage from "./pages/ActivitiesPage";
 import ActivityDetail from "./pages/ActivityDetail";
 import { AuthProvider } from "./context/AuthContext";
-import PrivateRoute from "./components/PrivateRoute"; // Asegúrate de importar PrivateRoute
+import PrivateRoute from "./components/PrivateRoute";
 import MyReservations from "./pages/MyReservations";
 import About from "./pages/About";
 function App() {

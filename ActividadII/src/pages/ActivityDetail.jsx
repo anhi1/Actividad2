@@ -1,8 +1,5 @@
-// src/pages/ActivityDetail.jsx
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
-
 
 
 const ActivityDetail = () => {
@@ -11,7 +8,6 @@ const ActivityDetail = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Usamos el endpoint general que ya tienes
     fetch('http://127.0.0.1:3658/m1/914149-896526-default/activities')
       .then((res) => {
         if (!res.ok) {
@@ -40,14 +36,12 @@ const ActivityDetail = () => {
   <div className="container mt-4">
     <h1 className="mb-4">{activity.name}</h1>
 
-    {/* Descripción principal */}
     <div className="mb-4">
       <p><strong>Tipo:</strong> {activity.type}</p>
       <p><strong>Precio:</strong> ${activity.price}</p>
       <p>{activity.long_description}</p>
     </div>
 
-    {/* Detalles organizados */}
     <div className="row g-3">
       <div className="col-md-6 col-lg-4">
         <div className="card h-100 shadow-sm">

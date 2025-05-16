@@ -1,53 +1,47 @@
-import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
   const { login } = useAuth();
-  const navigate = useNavigate();
 
-  const handleLogin = async (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
 
-    try {
-      const success = await login(email, password);
-      if (success) {
-        navigate('/activities');
-      } else {
-        setError('Credenciales incorrectas');
-      }
-    } catch (err) {
-      console.error('Error en el login:', err);
-      setError('Hubo un problema al iniciar sesión.');
+    const success = login(email, password);
+
+    if (!success) {
+      setError("Correo o contraseña incorrectos");
+    } else {
+      setError("");
+      // Navega dentro del contexto
     }
   };
 
   return (
     <div className="container-fluid min-vh-100 d-flex align-items-center bg-light">
       <div className="row w-100">
-        {/* Lado izquierdo: Imagen */}
-        <div className="col-md-6 d-none d-md-flex align-items-center justify-content-center ">
+        {/* Imagen izquierda */}
+        <div className="col-md-6 d-none d-md-flex align-items-center justify-content-center">
           <img
-            src="jovenes.jpg" // Asegúrate de tener esta imagen
+            src="jovenes.jpg"
             alt="Login visual"
             className="img-fluid"
-            style={{ maxHeight: '100vh', objectFit: 'cover', width: '100%' }}
+            style={{ maxHeight: "100vh", objectFit: "cover", width: "100%" }}
           />
         </div>
 
-        {/* Lado derecho: Formulario */}
+        {/* Formulario derecha */}
         <div className="col-12 col-md-6 d-flex align-items-center justify-content-center">
-          <div className="card p-4 shadow w-100" style={{ maxWidth: '400px' }}>
-            {/* GIF Animado arriba */}
+          <div className="card p-4 shadow w-100" style={{ maxWidth: "400px" }}>
             <div className="text-center mb-4">
               <img
-                src="viajero.gif" // Pon tu GIF en public/animations/
+                src="viajero.gif"
                 alt="Animación viajero"
-                style={{ height: '110px' }}
+                style={{ height: "110px" }}
               />
             </div>
 
@@ -57,12 +51,14 @@ const Login = () => {
 
             <form onSubmit={handleLogin}>
               <div className="mb-3">
-                <label htmlFor="email" className="form-label">Correo electrónico</label>
+                <label htmlFor="email" className="form-label">
+                  Correo electrónico
+                </label>
                 <input
                   id="email"
                   type="email"
                   className="form-control"
-                  placeholder="Ingresa tu correo"
+                  placeholder="user1@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -70,19 +66,22 @@ const Login = () => {
               </div>
 
               <div className="mb-3">
-                <label htmlFor="password" className="form-label">Contraseña</label>
+                <label htmlFor="password" className="form-label">
+                  Contraseña
+                </label>
                 <input
                   id="password"
                   type="password"
                   className="form-control"
-                  placeholder="Ingresa tu contraseña"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                 />
               </div>
 
-              <button type="submit" className="btn btn-primary w-100">Entrar</button>
+              <button type="submit" className="btn btn-primary w-100">
+                Entrar
+              </button>
             </form>
           </div>
         </div>

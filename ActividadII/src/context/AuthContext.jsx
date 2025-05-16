@@ -5,44 +5,27 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [user, setUser] = useState(null); // Almacena los datos del usuario
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
-  const login = async (email, password) => {
-    try {
-      // Realiza una solicitud al backend para autenticar al usuario
-      const response = await fetch(
-        "http://127.0.0.1:3658/m1/914149-896526-default/login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, password }),
-        }
-      );
+  const login = (email, password) => {
+    const validEmail = "user1@gmail.com";
+    const validPassword = "123456";
 
-      if (response.ok) {
-        const data = await response.json();
-        setIsAuthenticated(true);
-        setUser(data.user); // Almacena los datos del usuario devueltos por el backend
-        navigate("/activities"); // Redirige a actividades
-      } else {
-        const errorData = await response.json();
-        alert(errorData.message || "Credenciales incorrectas");
-      }
-    } catch (error) {
-      console.error("Error en la solicitud de login:", error);
-      alert(
-        "Hubo un problema al iniciar sesión. Inténtalo de nuevo más tarde."
-      );
+    if (email === validEmail && password === validPassword) {
+      setIsAuthenticated(true);
+      setUser({ email: validEmail, name: "User 1" });
+      navigate("/activities");
+      return true;
+    } else {
+      return false;
     }
   };
 
   const logout = () => {
     setIsAuthenticated(false);
-    setUser(null); // Limpia los datos del usuario
-    navigate("/login"); // Redirige al login
+    setUser(null);
+    navigate("/login");
   };
 
   return (

@@ -53,7 +53,7 @@ const LandingPage = () => {
               </div>
             </div>
             <div className="col-12 col-md-6">
-              <img src="personas.png" className="img-fluid" alt="tortuga" />
+              <img src="/actividadII/personas.png" className="img-fluid" alt="tortuga" />
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@ const LandingPage = () => {
         <div className="row text-center">
           <div className="col-12 col-md-6 col-lg-3 mb-4">
             <img
-              src="Location.png"
+              src="/actividadII/Location.png"
               alt="Dirección"
               width="40"
               height="40"
@@ -112,7 +112,7 @@ const LandingPage = () => {
 
           <div className="col-12 col-md-6 col-lg-3 mb-4">
             <img
-              src="call.png"
+              src="/actividadII/call.png"
               alt="Contacto"
               width="40"
               height="40"
@@ -126,7 +126,7 @@ const LandingPage = () => {
 
           <div className="col-12 col-md-6 col-lg-3 mb-4">
             <img
-              src="Calendar.png"
+              src="/actividadII/Calendar.png"
               alt="Horario"
               width="40"
               height="40"
@@ -140,7 +140,7 @@ const LandingPage = () => {
 
           <div className="col-12 col-md-6 col-lg-3 mb-4">
             <img
-              src="Text.png"
+              src="/actividadII/Text.png"
               alt="Descripción"
               width="40"
               height="40"
